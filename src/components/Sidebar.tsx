@@ -142,12 +142,13 @@ export function Sidebar({ activeTab, setActiveTab, onProfileClick, isOpen, onClo
                   <Coins className="w-4 h-4" style={{ color: '#EE6C4D' }} />
                   <span className="text-sm" style={{ color: isDarkMode ? '#e5e7eb' : '#293241' }}>{userCoins}</span>
                 </div>
-                <div className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 whitespace-nowrap" style={{ 
+                <div className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 whitespace-nowrap overflow-hidden" style={{ 
                   backgroundColor: isDarkMode ? 'rgba(255,255,255,0.05)' : 'rgba(224, 224, 224, 0.3)',
-                  color: isDarkMode ? '#94a3b8' : '#3D5A80'
+                  color: isDarkMode ? '#94a3b8' : '#3D5A80',
+                  maxWidth: '100%'
                 }}>
-                  <span className="text-sm">{getRoleName(userRoleId, language)}</span>
-                  <span className="text-xs opacity-75">Lvl {userRoleId}</span>
+                  <span className="text-sm truncate">{getRoleName(userRoleId, language)}</span>
+                  <span className="text-xs opacity-75 flex-shrink-0">Lvl {userRoleId}</span>
                 </div>
               </div>
               
