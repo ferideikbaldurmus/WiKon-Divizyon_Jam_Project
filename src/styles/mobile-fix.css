@@ -1,0 +1,21 @@
+/* Mobile bottom navigation fix */
+body {
+  background-color: #ffffff;
+}
+
+html {
+  background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #ffffff;
+    z-index: -1;
+  }
+}

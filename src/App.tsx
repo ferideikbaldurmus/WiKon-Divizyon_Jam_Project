@@ -14,6 +14,7 @@ import { AIChatBot } from './components/AIChatBot';
 import { AuthPage } from './components/AuthPage';
 import { Language } from './utils/translations';
 import { Toaster } from 'sonner@2.0.3';
+import './styles/mobile-fix.css';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
