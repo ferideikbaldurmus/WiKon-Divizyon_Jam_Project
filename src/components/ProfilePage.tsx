@@ -4,6 +4,7 @@ import { Language, useTranslation } from '../utils/translations';
 import { SearchHeader } from './SearchHeader';
 import { getRoleName, getRolePermissions } from '../utils/roleUtils';
 import { toast } from 'sonner@2.0.3';
+import { useIsMobile } from './ui/use-mobile';
 
 interface ProfilePageProps {
   language: Language;
@@ -28,6 +29,7 @@ interface ProfilePageProps {
 
 export function ProfilePage({ language, onNavigate, onGoBack, setLanguage, onMenuClick, onLogout, profileName = 'Ahmet Yılmaz', profileUsername = 'ahmetyilmaz', profileBio = '', profileEmail = '', gencKulturKartID = '', profilePhotoUrl = '', onUpdateProfile, currentCoins, onCoinUpdate, userRoleId = 1, isDarkMode = false, setIsDarkMode }: ProfilePageProps) {
   const t = useTranslation(language);
+  const isMobile = useIsMobile();
   
   // Profile editing states
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -234,8 +236,8 @@ export function ProfilePage({ language, onNavigate, onGoBack, setLanguage, onMen
             background: 'linear-gradient(135deg, #3D5A80 0%, #293241 100%)'
           }}
         >
-          <div className="flex items-start justify-between mb-6">
-            <div className="flex items-center gap-6">
+          <div className="relative mb-6">
+            <div className="flex items-center gap-6 flex-wrap">
               <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center ring-4 ring-white/30">
                 <User className="w-12 h-12" style={{ color: '#EE6C4D' }} />
               </div>
@@ -255,7 +257,7 @@ export function ProfilePage({ language, onNavigate, onGoBack, setLanguage, onMen
                 {profileBio && (
                   <p className="text-sm mb-2" style={{ color: 'rgba(240, 240, 240, 0.8)' }}>{profileBio}</p>
                 )}
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap">
                   <span 
                     className="px-3 py-1 backdrop-blur-sm rounded-full text-sm"
                     style={{ backgroundColor: 'rgba(224, 224, 224, 0.3)' }}
@@ -274,13 +276,20 @@ export function ProfilePage({ language, onNavigate, onGoBack, setLanguage, onMen
             </div>
             <button 
               onClick={handleEditClick}
-              className="px-4 py-2 backdrop-blur-sm rounded-lg transition-colors flex items-center gap-2"
-              style={{ backgroundColor: 'rgba(255, 255, 255, 0.2)' }}
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.3)'}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.2)'}
+              className="absolute top-2 right-2 px-4 py-1 backdrop-blur-sm rounded-full transition-colors flex items-center justify-center gap-1.5 text-xs z-10 min-w-[90px]"
+              style={{ 
+                backgroundColor: 'rgba(224, 224, 224, 0.3)',
+                color: 'white',
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(224, 224, 224, 0.4)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(224, 224, 224, 0.3)';
+              }}
             >
-              <Edit className="w-4 h-4" />
-              {t.editProfile}
+              <Edit className="w-3.5 h-3.5" />
+              <span className="whitespace-nowrap">{language === 'TR' ? 'Düzenle' : 'Edit'}</span>
             </button>
           </div>
 
