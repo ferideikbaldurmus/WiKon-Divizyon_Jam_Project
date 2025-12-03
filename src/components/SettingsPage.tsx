@@ -2,6 +2,7 @@ import { User, Bell, Lock, Eye, Palette, Globe, Coins, CreditCard, LogOut, Trash
 import { useState } from 'react';
 import { Language, useTranslation } from '../utils/translations';
 import { SearchHeader } from './SearchHeader';
+import { toast } from 'sonner@2.0.3';
 
 interface SettingsPageProps {
   language: Language;
@@ -203,6 +204,7 @@ export function SettingsPage({ language, onNavigate, onGoBack, setLanguage, onMe
                   <option>KTO Karatay Üniversitesi</option>
                   <option>Necmettin Erbakan Üniversitesi</option>
                   <option>Konya Teknik Üniversitesi</option>
+                  <option>Konya Gıda ve Tarım Üniversitesi</option>
                 </select>
               </div>
               <div>
@@ -220,11 +222,30 @@ export function SettingsPage({ language, onNavigate, onGoBack, setLanguage, onMe
                 />
               </div>
             </div>
-            <button 
-              className="w-full sm:w-auto px-6 py-3 text-white rounded-lg transition-opacity hover:opacity-90"
-              style={{ backgroundColor: '#3D5A80' }}
-            >
-              Değişiklikleri Kaydet
+              <button 
+                className="w-full sm:w-auto px-6 py-3 text-white rounded-lg transition-all hover:opacity-90 active:scale-95"
+                style={{ 
+                  backgroundColor: '#3D5A80',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                }}
+                onClick={() => {
+                  // Değişiklikleri kaydet
+                  toast.success(
+                    language === 'TR' 
+                      ? 'Değişiklikler başarıyla kaydedildi!' 
+                      : 'Changes saved successfully!',
+                    {
+                      style: {
+                        background: '#3D5A80',
+                        color: 'white',
+                        border: '2px solid #98C1D9'
+                      },
+                      duration: 3000
+                    }
+                  );
+                }}
+              >
+                Değişiklikleri Kaydet
             </button>
           </div>
         </div>

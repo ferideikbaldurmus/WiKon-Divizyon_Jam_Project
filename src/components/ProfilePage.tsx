@@ -1169,8 +1169,8 @@ export function ProfilePage({ language, onNavigate, onGoBack, setLanguage, onMen
 
               {/* Amount Input */}
               <div className="relative">
-                <input
-                  type="number"
+                  <input
+                  type="text"
                   value={inputAmount}
                   onChange={(e) => setInputAmount(e.target.value)}
                   className="w-full px-4 py-3 rounded-lg border-2 outline-none transition-all"
@@ -1187,7 +1187,7 @@ export function ProfilePage({ language, onNavigate, onGoBack, setLanguage, onMen
                   className="absolute right-4 top-1/2 transform -translate-y-1/2"
                   style={{ color: isDarkMode ? '#64748b' : '#9E9E9E' }}
                 >
-                  GençCoin
+                  Kültür Kart Puanı
                 </span>
               </div>
 
