@@ -1,4 +1,5 @@
-WiKon, Konya’daki üniversite öğrencilerinin bilgi ve deneyimlerini tek bir dijital platformda buluşturan,
+## WiKon,
+Konya’daki üniversite öğrencilerinin bilgi ve deneyimlerini tek bir dijital platformda buluşturan,
 Wiki + Sözlük hibrit yapısına sahip, oyunlaştırılmış bir öğrenci bilgi paylaşım platformudur.
 
 Bu proje; öğrencilerin ders notları, mekan önerileri, barınma rehberleri, etkinlikler, burslar, staj ve şehir yaşamına dair içerikleri başlıklar altında paylaşmasını sağlar.
