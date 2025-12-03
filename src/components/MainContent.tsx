@@ -657,9 +657,9 @@ export function MainContent({ onNavigate, language, setLanguage, onMenuClick, on
                   : 'border hover:shadow-md'
               }`}
               style={activeCategory === category.id ? {
-                backgroundColor: isDarkMode ? 'transparent' : '#E0FBFC',
+                backgroundColor: isDarkMode ? 'transparent' : '#F0F0F0',
                 color: isDarkMode ? '#e5e7eb' : '#3D5A80',
-                border: isDarkMode ? '1px solid #4A6A90' : '1px solid #E0FBFC'
+                border: isDarkMode ? '1px solid #4A6A90' : '1px solid #F0F0F0'
               } : { 
                 backgroundColor: 'transparent',
                 color: isDarkMode ? '#94a3b8' : '#293241',
@@ -994,7 +994,7 @@ export function MainContent({ onNavigate, language, setLanguage, onMenuClick, on
                     <span>{item.contentType}</span>
                   </span>
                   <span className="text-sm backdrop-blur-sm px-3 py-1.5 rounded-full" style={{ 
-                    backgroundColor: isDarkMode ? 'transparent' : '#E0FBFC',
+                    backgroundColor: isDarkMode ? 'transparent' : '#F0F0F0',
                     color: isDarkMode ? '#e5e7eb' : '#3D5A80',
                     border: isDarkMode ? '1px solid #4A6A90' : 'none'
                   }}>{item.category}</span>
@@ -1030,7 +1030,7 @@ export function MainContent({ onNavigate, language, setLanguage, onMenuClick, on
                     <div className="flex items-center gap-2">
                       <span className="text-sm" style={{ color: isDarkMode ? '#e5e7eb' : '#293241' }}>{item.author}</span>
                       <span className="px-2 py-1 text-xs rounded-full whitespace-nowrap" style={{
-                        backgroundColor: isDarkMode ? 'transparent' : '#E0FBFC',
+                        backgroundColor: isDarkMode ? 'transparent' : '#F0F0F0',
                         color: isDarkMode ? '#e5e7eb' : '#3D5A80',
                         border: isDarkMode ? '1px solid #4A6A90' : 'none'
                       }}>
