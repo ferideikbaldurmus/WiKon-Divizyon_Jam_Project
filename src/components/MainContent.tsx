@@ -660,7 +660,6 @@ export function MainContent({ onNavigate, language, setLanguage, onMenuClick, on
                 backgroundColor: '#3D5A80'
               } : { 
                 backgroundColor: isDarkMode ? '#1e293b' : 'white',
-                borderColor: isDarkMode ? 'rgba(255,255,255,0.1)' : 'rgba(61, 90, 128, 0.15)' 
               }}
             >
               <div className="relative flex flex-col items-center gap-1.5">
